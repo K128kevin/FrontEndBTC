@@ -16,5 +16,29 @@ Technologies:
 - Either D3js or HighCharts for the charts
 - HTML/CSS for markup/styles (maybe Grunt for build tool?)
 
+API Endpoints:
+
+Base Url: http://www.btcpredictions.com:8080/api/data
+
+1.
+GET /prices
+Params:
+start -> unix timestamp for start of range of prices to be returned
+end -> unix timestamp for end of range of prices to be returned
+stockId -> string representing the commodity to be returned
+interval -> resolution of the data, an integer between 300 and 1800 inclusive. Defines number of seconds worth of price data used to calculate each price returned (all prices are averaged together). For example, a value of 300 will give you the average price over each 5 minute period
+
+example: http://www.btcpredictions.com:8080/api/data/prices?start=1445513275&end=1445554275&stockId=BTC&interval=900
+
+2. 
+GET /predictions
+Params:
+start -> unix timestamp of earliest set of predictions made
+end -> unix timestamp of latest set of predictions made
+stockId -> string representing commodity whose predictions we are requesting
+predType -> unique string corresponding with a particular neural network that was used to make that prediction (for now use "900-flat")
+
+example: http://www.btcpredictions.com:8080/api/data/predictions?start=1445553275&end=1445554275&stockId=BTC&predType=900-flat
+
 Questions? Answers?
 We can fill out any questions and answers we come up with below here as we go.
