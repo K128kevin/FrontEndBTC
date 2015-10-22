@@ -1,0 +1,20 @@
+Documentation for buildilng front end for www.btcpredictions.com - feel free to modify this document at any time and update it as things change
+
+Goal: Rebuild the front end for the website to dynamically build charts showing commodity price data based on user inputs, using the two new api endpoints that will be described below.
+
+Requirements:
+1. We want to be able to have a piece of reusable code that can generate a chart displaying both price and prediction data over a time period defined by the user. The user will also supply the commodity and the resolution of the data (number of seconds between each price point).
+2. We want the user to be able to place their mouse over the chart and have a small window pop up next to the cursor or above the chart, displaying the price at that point.
+3. We eventually will want users to be able to sign up and log in. Back end infrastructure for this mostly already exists.
+4. Once users are logged in, we want them to be able to register for different commodities they are interested in seeing. They will only be able to load charts for the commodities that they are registered to. Attempting to load a chart for a commodity to which they are not registered will, instead of displaying the chart, display the option to sign up for that commodity. There will be limits to the number of people who can sign up for any given commodity.
+6. Basic pages and navigation bars, such as about, contact us, etc
+
+Technologies:
+- Back end is already written in Go
+- Front end will use React and Flux, JQuery
+- JSON format is used for communication between back and and front end applications
+- Either D3js or HighCharts for the charts
+- HTML/CSS for markup/styles (maybe Grunt for build tool?)
+
+Questions? Answers?
+We can fill out any questions and answers we come up with below here as we go.
